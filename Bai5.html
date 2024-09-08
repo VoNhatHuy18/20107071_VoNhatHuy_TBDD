@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <script>
+        const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+        const checkWinner = (dolphinsScores, koalasScores) => {
+            const dolphinsAverage = calcAverage(...dolphinsScores);
+            const koalasAverage = calcAverage(...koalasScores);
+
+            if (dolphinsAverage >= 2 * koalasAverage) {
+                return 'Cá heo thắng!';
+            } else if (koalasAverage >= 2 * dolphinsAverage) {
+                return 'Gấu túi thắng!';
+            } else {
+                return 'Không ai thắng!';
+            }
+        };
+
+        // Test data 1
+        const dolphinsScores1 = [44, 23, 71];
+        const koalasScores1 = [65, 54, 49];
+        console.log(checkWinner(dolphinsScores1, koalasScores1)); 
+
+        // Test data 2
+        const dolphinsScores2 = [85, 54, 41];
+        const koalasScores2 = [23, 34, 27];
+        console.log(checkWinner(dolphinsScores2, koalasScores2)); 
+    </script>
+</body>
+
+</html>
